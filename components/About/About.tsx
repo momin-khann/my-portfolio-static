@@ -13,8 +13,7 @@ const About = () => {
     <AppWrapper idName={"about"}>
       <MotionWrapper classNames={"app__about"}>
         <h2 className="head-text">
-          I Know that <span>Good Design</span> <br />
-          means <span>Good Business</span>
+          Who <span>AM I</span> <br />
         </h2>
 
         <div className="app__profiles">

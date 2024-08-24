@@ -5,11 +5,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AppWrapper } from "@/components";
 
-import momin from "@/public/assets/momin.png";
-import circle from "@/public/assets/circle.svg";
-import react from "@/public/assets/react.png";
-import redux from "@/public/assets/redux.png";
-import sass from "@/public/assets/sass.png";
+import momin from "@/public/assets/profile/momin.png";
+import circle from "@/public/assets/backgrounds/circle.svg";
+import react from "@/public/assets/icons/react.png";
+import redux from "@/public/assets/icons/redux.png";
+import sass from "@/public/assets/icons/sass.png";
 
 import "./header.css";
 
@@ -42,7 +42,7 @@ const Header = () => (
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Stack Dev</p>
+            <p className="p-text">Full Stack Dev</p>
             <p className="p-text">Freelancer</p>
           </div>
         </div>
