@@ -3,14 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import bg from "@/public/assets/bg.png";
+import AppWrap from "@/wrapper/AppWrap";
+import bg from "@/public/assets/momin.png";
 import circle from "@/public/assets/circle.svg";
 import react from "@/public/assets/react.png";
 import redux from "@/public/assets/redux.png";
 import sass from "@/public/assets/sass.png";
 
 import "./header.css";
-import AppWrap from "@/wrapper/AppWrap";
 
 const scaleVariants = {
   whileInView: {
@@ -41,7 +41,7 @@ const Header = () => (
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">MERN Stack Dev</p>
+            <p className="p-text">Full Stack Dev</p>
             <p className="p-text">Freelancer</p>
           </div>
         </div>
