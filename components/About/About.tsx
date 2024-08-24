@@ -2,16 +2,16 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import AppWrap from "@/wrapper/AppWrap";
+import { AppWrapper, MotionWrapper } from "@/components";
 import Image from "next/image";
 import { abouts } from "@/constants/about";
-import MotionWrap from "@/wrapper/MotionWrap";
+
 import "./about.css";
 
 const About = () => {
   return (
-    <AppWrap idName={"about"}>
-      <MotionWrap classNames={"app__about"}>
+    <AppWrapper idName={"about"}>
+      <MotionWrapper classNames={"app__about"}>
         <h2 className="head-text">
           I Know that <span>Good Design</span> <br />
           means <span>Good Business</span>
@@ -36,8 +36,8 @@ const About = () => {
             </motion.div>
           ))}
         </div>
-      </MotionWrap>
-    </AppWrap>
+      </MotionWrapper>
+    </AppWrapper>
   );
 };
 
