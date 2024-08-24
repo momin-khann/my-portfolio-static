@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AppWrap from "@/wrapper/AppWrap";
+import { AppWrapper } from "@/components";
+
 import momin from "@/public/assets/momin.png";
 import circle from "@/public/assets/circle.svg";
 import react from "@/public/assets/react.png";
@@ -24,7 +25,7 @@ const scaleVariants = {
 };
 
 const Header = () => (
-  <AppWrap idName={"home"}>
+  <AppWrapper idName={"home"}>
     <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -73,7 +74,7 @@ const Header = () => (
         ))}
       </motion.div>
     </div>
-  </AppWrap>
+  </AppWrapper>
 );
 
 export default Header;

@@ -7,7 +7,7 @@ interface Props {
   idName: string;
 }
 
-const AppWrap = ({ children, classNames = "", idName }: Props) => {
+const AppWrapper = ({ children, classNames = "", idName }: Props) => {
   return (
     <div id={idName} className={`app__container ${classNames}`}>
       <SocialMedia />
@@ -21,4 +21,4 @@ const AppWrap = ({ children, classNames = "", idName }: Props) => {
   );
 };
 
-export default AppWrap;
+export default AppWrapper;

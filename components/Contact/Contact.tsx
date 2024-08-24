@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import emailIcon from "@/public/assets/email.png";
 import mobileIcon from "@/public/assets/mobile.png";
 import Image from "next/image";
-import AppWrap from "@/wrapper/AppWrap";
+import { AppWrapper } from "@/components";
 
 import "./contact.css";
 
@@ -32,7 +32,7 @@ const Contact = () => {
   };
 
   return (
-    <AppWrap idName={"contact"} classNames={"app__whitebg"}>
+    <AppWrapper idName={"contact"} classNames={"app__whitebg"}>
       <h2 className="head-text">Take a coffee & chat with me</h2>
 
       <div className="app__footer-cards">
@@ -89,7 +89,7 @@ const Contact = () => {
           <h3 className="head-text">Thank you for getting in touch!</h3>
         </div>
       )}
-    </AppWrap>
+    </AppWrapper>
   );
 };
 
