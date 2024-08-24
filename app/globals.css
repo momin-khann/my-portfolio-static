@@ -65,11 +65,12 @@
 
 .copyright {
   width: 100%;
-  padding: 2rem 0 0;
+  padding-block: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
 }
 .copyright p {
   text-transform: uppercase;
