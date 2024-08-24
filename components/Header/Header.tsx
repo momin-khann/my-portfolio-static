@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AppWrap from "@/wrapper/AppWrap";
-import bg from "@/public/assets/momin.png";
+import momin from "@/public/assets/momin.png";
 import circle from "@/public/assets/circle.svg";
 import react from "@/public/assets/react.png";
 import redux from "@/public/assets/redux.png";
@@ -41,7 +41,7 @@ const Header = () => (
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Full Stack Dev</p>
+            <p className="p-text">Stack Dev</p>
             <p className="p-text">Freelancer</p>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Header = () => (
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-        <Image src={bg} alt="profile_bg" />
+        <Image src={momin} alt="profile_bg" />
         <motion.div
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: "easeInOut" }}
