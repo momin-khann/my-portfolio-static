@@ -25,6 +25,7 @@
 .app__work-filter .app__work-filter-item:hover {
     background-color: var(--secondary-color);
     color: #fff;
+    font-weight: 500;
 }
 @media screen and (min-width: 2000px) {
     .app__work-filter .app__work-filter-item {
@@ -35,6 +36,7 @@
 .app__work-filter .item-active {
     background-color: var(--secondary-color);
     color: #fff;
+    font-weight: 500;
 }
 
 .app__work-portfolio {

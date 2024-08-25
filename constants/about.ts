@@ -6,12 +6,12 @@ export const abouts = [
   {
     title: "UI Developer",
     description: "Tailwind, Shadcn-UI, Material-UI, Ant Design",
-    image: about01,
+    image: about02,
   },
   {
     title: "Web Animation",
     description: "Framer Motion, Aceternity, GSAP, AOS, etc",
-    image: about02,
+    image: about01,
   },
   {
     title: "Full Stack Developer",

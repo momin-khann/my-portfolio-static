@@ -1,19 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { AppWrapper, MotionWrapper } from "@/components";
+import { works } from "@/constants/work";
 
 import "./work.css";
-import { AppWrapper, MotionWrapper } from "@/components";
 
 const Work = () => {
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [filterWork, setFilterWork] = useState(works);
+  const [activeFilter, setActiveFilter] = useState("Next JS");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
-  const handleWorkFilter = (item: string) => {};
+  const handleWorkFilter = (item: string) => {
+    setActiveFilter(item);
+  };
 
   return (
     <AppWrapper idName={"work"} classNames={"app__primarybg"}>
@@ -23,7 +27,7 @@ const Work = () => {
         </h2>
 
         <div className="app__work-filter">
-          {["UI/UX", "Web App", "React JS", "All"].map((item, index) => (
+          {["Next JS", "React JS", "MERN", "All"].map((item, index) => (
             <div
               key={index}
               onClick={() => handleWorkFilter(item)}
@@ -40,9 +44,9 @@ const Work = () => {
           className="app__work-portfolio"
         >
           {filterWork.map((work, index) => (
-            <div className="app__work-item app__flex" key={index}>
+            <div className="app__work-item app__flex">
               <div className="app__work-img app__flex">
-                {/*<img src={urlFor(work.imgUrl)} alt={work.name} />*/}
+                <Image src={work.image} alt={work.title} />
 
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
@@ -53,7 +57,11 @@ const Work = () => {
                   }}
                   className="app__work-hover app__flex"
                 >
-                  <a href={""} target="_blank" rel="noreferrer">
+                  <Link
+                    href={work.projectLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
@@ -62,8 +70,8 @@ const Work = () => {
                     >
                       <AiFillEye />
                     </motion.div>
-                  </a>
-                  <a href={""} target="_blank" rel="noreferrer">
+                  </Link>
+                  <Link href={work.codeLink} target="_blank" rel="noreferrer">
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
@@ -72,18 +80,18 @@ const Work = () => {
                     >
                       <AiFillGithub />
                     </motion.div>
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
 
               <div className="app__work-content app__flex">
-                {/*<h4 className="bold-text">{work.title}</h4>*/}
+                <h4 className="bold-text">{work.title}</h4>
                 <p className="p-text" style={{ marginTop: 10 }}>
-                  {/*{work.description}*/}
+                  {work.description}
                 </p>
 
                 <div className="app__work-tag app__flex">
-                  <p className="p-text">{/*{ work.tags}*/}</p>
+                  <p className="p-text">{work.tag}</p>
                 </div>
               </div>
             </div>
