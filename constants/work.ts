@@ -1,21 +1,30 @@
-import about02 from "@/public/assets/about/about02.png";
-import about01 from "@/public/assets/about/about01.png";
+import devOverflow from "@/public/assets/projects/devOverflow.png";
+import restaurant from "@/public/assets/projects/reactRestaurant.png";
+import wildOasis from "@/public/assets/projects/wildOasis.png";
 
 export const works = [
   {
     title: "Restaurant Website",
     description: "Modern Restaurant Website",
     tag: "react",
-    image: about02,
-    projectLink: "https://react-restaurant-website-eight.vercel.app/",
+    image: restaurant,
+    liveDemo: "https://react-restaurant-website-eight.vercel.app/",
     codeLink: "https://github.com/momin-khann/react-restaurant-website-static",
   },
   {
     title: "DevOverflow",
     description: "Modern Website",
-    tag: "nextjs",
-    image: about01,
-    projectLink: "https://dev-overflow-gamma.vercel.app/",
+    tag: "next",
+    image: devOverflow,
+    liveDemo: "https://dev-overflow-gamma.vercel.app/",
     codeLink: "https://github.com/momin-khann/dev-overflow",
+  },
+  {
+    title: "Wild Oasis",
+    description: "A Botique Hotel",
+    tag: "next",
+    image: wildOasis,
+    liveDemo: "https://wild-oasis-website.vercel.app/",
+    codeLink: "https://github.com/momin-khann/wild-oasis-website",
   },
 ];

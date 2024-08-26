@@ -1,4 +1,12 @@
-import { About, Header, Navbar, Contact, Footer, Work } from "@/components";
+import {
+  About,
+  Header,
+  Navbar,
+  Contact,
+  Footer,
+  Work,
+  Skills,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -7,7 +15,7 @@ export default function Home() {
       <Header />
       <About />
       <Work />
-      {/*Skills*/}
+      <Skills />
       <Contact />
       <Footer />
     </main>
