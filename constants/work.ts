@@ -13,7 +13,7 @@ export const works = [
   },
   {
     title: "DevOverflow",
-    description: "Modern Website",
+    description: "Community For Developers",
     tag: "next",
     image: devOverflow,
     liveDemo: "https://dev-overflow-gamma.vercel.app/",

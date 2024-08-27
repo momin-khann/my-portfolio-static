@@ -16,15 +16,12 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState(works);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const scroll = (direction: string) => {
-    if (direction === "left") {
-      // @ts-ignore
-      scrollRef.current.scrollLeft -= 300;
-    } else {
-      // @ts-ignore
-      scrollRef.current.scrollLeft += 300;
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === "left" ? -320 : 320;
+      scrollRef.current.scrollLeft += scrollAmount;
     }
   };
 
@@ -40,7 +37,7 @@ const Work = () => {
         </h2>
 
         <div className="app__work-filter">
-          {["Next JS", "React JS", "MERN", "All"].map((item, index) => (
+          {["Next JS", "React", "MERN", "All"].map((item, index) => (
             <div
               key={index}
               onClick={() => handleWorkFilter(item)}
@@ -56,10 +53,16 @@ const Work = () => {
           animate={animateCard}
           transition={{ duration: 0.5, delayChildren: 0.5 }}
         >
-          <div className="app__work-portfolio" ref={scrollRef}>
+          <div
+            className="app__work-portfolio w-[320px] sm:w-[480px] md:w-[750px] xl:w-[1100px]"
+            ref={scrollRef}
+          >
             <div className="flex w-max">
               {filterWork.map((work, index) => (
-                <div className="app__work-item app__flex" key={index}>
+                <div
+                  className="app__work-item app__flex w-[280px] sm:w-[350px] xl:w-[450px]"
+                  key={index}
+                >
                   <div className="app__work-img app__flex">
                     <Image src={work.image} alt={work.title} />
 
@@ -113,11 +116,26 @@ const Work = () => {
                       <p className="p-text">{capitalize(work.tag)}</p>
                     </div>
                   </div>
+
+                  <div className="flex gap-4">
+                    <Link
+                      href={work.liveDemo}
+                      className={"bg-blue px-4 py-1 rounded-lg"}
+                    >
+                      Live Demo
+                    </Link>
+                    <Link
+                      href={work.codeLink}
+                      className={"bg-blue px-4 py-1 rounded-lg"}
+                    >
+                      Code
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className={"absolute bottom-[45%] w-full flex justify-between"}>
+          <div className={"absolute bottom-[45%] w-full flex justify-between "}>
             <div
               className="bg-white p-3 rounded-full shadow-lg cursor-pointer"
               onClick={() => scroll("left")}

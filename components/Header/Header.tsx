@@ -9,7 +9,8 @@ import momin from "@/public/assets/profile/momin.png";
 import circle from "@/public/assets/backgrounds/circle.svg";
 import react from "@/public/assets/icons/react.png";
 import redux from "@/public/assets/icons/redux.png";
-import sass from "@/public/assets/icons/sass.png";
+import graphql from "@/public/assets/icons/graphql.png";
+import typescript from "@/public/assets/icons/typescript.png";
 
 import "./header.css";
 
@@ -67,7 +68,7 @@ const Header = () => (
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[react, redux, sass].map((circle, index) => (
+        {[redux, react, graphql].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <Image src={circle} alt="profile_bg" />
           </div>
