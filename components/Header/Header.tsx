@@ -5,11 +5,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AppWrapper } from "@/components";
 
-import momin from "@/public/assets/momin.png";
-import circle from "@/public/assets/circle.svg";
-import react from "@/public/assets/react.png";
-import redux from "@/public/assets/redux.png";
-import sass from "@/public/assets/sass.png";
+import momin from "@/public/assets/profile/momin.png";
+import circle from "@/public/assets/backgrounds/circle.svg";
+import react from "@/public/assets/icons/react.png";
+import redux from "@/public/assets/icons/redux.png";
+import graphql from "@/public/assets/icons/graphql.png";
+import typescript from "@/public/assets/icons/typescript.png";
 
 import "./header.css";
 
@@ -42,7 +43,7 @@ const Header = () => (
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Stack Dev</p>
+            <p className="p-text">Full Stack Dev</p>
             <p className="p-text">Freelancer</p>
           </div>
         </div>
@@ -67,7 +68,7 @@ const Header = () => (
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[react, redux, sass].map((circle, index) => (
+        {[redux, react, graphql].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <Image src={circle} alt="profile_bg" />
           </div>

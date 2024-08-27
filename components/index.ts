@@ -7,6 +7,8 @@ import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 import AppWrapper from "@/components/wrapper/AppWrapper";
 import MotionWrapper from "@/components/wrapper/MotionWrapper";
+import Work from "@/components/Work/Work";
+import Skills from "@/components/Skills/Skills";
 
 export {
   Header,
@@ -18,4 +20,6 @@ export {
   Footer,
   AppWrapper,
   MotionWrapper,
+  Work,
+  Skills,
 };

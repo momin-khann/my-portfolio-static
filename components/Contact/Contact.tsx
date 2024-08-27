@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import emailIcon from "@/public/assets/email.png";
-import mobileIcon from "@/public/assets/mobile.png";
+import emailIcon from "@/public/assets/icons/email.png";
+import mobileIcon from "@/public/assets/icons/mobile.png";
 import Image from "next/image";
 import { AppWrapper } from "@/components";
 

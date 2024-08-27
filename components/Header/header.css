@@ -1,6 +1,6 @@
 #home {
     position: relative;
-    background: url("/assets/bgIMG.png") repeat center;
+    background: url("/assets/backgrounds/bgIMG.png") repeat center;
     background-size: cover;
 }
 #home .app__wrapper {
