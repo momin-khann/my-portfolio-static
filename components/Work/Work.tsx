@@ -20,7 +20,7 @@ const Work = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -320 : 320;
+      const scrollAmount = direction === "left" ? -370 : 370;
       scrollRef.current.scrollLeft += scrollAmount;
     }
   };
@@ -54,13 +54,13 @@ const Work = () => {
           transition={{ duration: 0.5, delayChildren: 0.5 }}
         >
           <div
-            className="app__work-portfolio w-[320px] sm:w-[480px] md:w-[750px] xl:w-[1100px]"
+            className="app__work-portfolio w-[375px] md:w-[750px] xl:w-[1100px]"
             ref={scrollRef}
           >
             <div className="flex w-max">
               {filterWork.map((work, index) => (
                 <div
-                  className="app__work-item app__flex w-[280px] sm:w-[350px] xl:w-[450px]"
+                  className="app__work-item app__flex w-[325px] xl:w-[450px]"
                   key={index}
                 >
                   <div className="app__work-img app__flex">
