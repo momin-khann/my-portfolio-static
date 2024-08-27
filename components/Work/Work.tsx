@@ -120,13 +120,13 @@ const Work = () => {
                   <div className="flex gap-4">
                     <Link
                       href={work.liveDemo}
-                      className={"bg-blue px-4 py-1 rounded-lg"}
+                      className={"bg-blue px-4 py-1 rounded-lg text-white"}
                     >
                       Live Demo
                     </Link>
                     <Link
                       href={work.codeLink}
-                      className={"bg-blue px-4 py-1 rounded-lg"}
+                      className={"bg-blue px-4 py-1 rounded-lg text-white"}
                     >
                       Code
                     </Link>
