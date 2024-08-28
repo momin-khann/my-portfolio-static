@@ -5,12 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { AppWrapper, MotionWrapper } from "@/components";
 import { works } from "@/constants/work";
 import { capitalize } from "@/utils/helper";
-import "react-multi-carousel/lib/styles.css";
 import "./work.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Work = () => {
   const [filterWork, setFilterWork] = useState(works);
@@ -25,8 +24,23 @@ const Work = () => {
     }
   };
 
-  const handleWorkFilter = (item: string) => {
-    setActiveFilter(item);
+  const handleWorkFilter = (filter: string) => {
+    setActiveFilter(filter);
+    setAnimateCard({ y: 100, opacity: 0 });
+
+    let filteredList = [];
+
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 1 });
+      if (filter === "All") {
+        setFilterWork(works);
+        return;
+      }
+
+      filteredList = works.filter((work) => filter.toLowerCase() === work.tag);
+
+      setFilterWork(filteredList);
+    }, 600);
   };
 
   return (
@@ -36,8 +50,9 @@ const Work = () => {
           My Creative <span>Portfolio</span> Section
         </h2>
 
+        {/* Tabs for filtering Project Types */}
         <div className="app__work-filter">
-          {["Next JS", "React", "MERN", "All"].map((item, index) => (
+          {["Next", "React", "MERN", "All"].map((item, index) => (
             <div
               key={index}
               onClick={() => handleWorkFilter(item)}
@@ -48,6 +63,7 @@ const Work = () => {
           ))}
         </div>
 
+        {/* Project Container */}
         <motion.div
           className="relative"
           animate={animateCard}
@@ -57,7 +73,11 @@ const Work = () => {
             className="app__work-portfolio w-[375px] md:w-[750px] xl:w-[1100px]"
             ref={scrollRef}
           >
+            {!filterWork?.length && (
+              <div className={"mx-auto text-xl"}>Ooops. Nothing to show!</div>
+            )}
             <div className="flex w-max">
+              {/* Project Cards */}
               {filterWork.map((work, index) => (
                 <div
                   className="app__work-item app__flex w-[325px] xl:w-[450px]"
@@ -135,25 +155,31 @@ const Work = () => {
               ))}
             </div>
           </div>
-          <div className={"absolute bottom-[45%] w-full flex justify-between "}>
-            <div
-              className="bg-white p-3 rounded-full shadow-lg cursor-pointer"
-              onClick={() => scroll("left")}
-            >
-              <FaChevronLeft
-                className={"font-800"}
-                size={25}
-                color={"#313BACFF"}
-              />
-            </div>
 
+          {/*Carousal Icons - Chevrons*/}
+          {filterWork?.length > 1 && (
             <div
-              className="bg-white p-3 rounded-full shadow-lg cursor-pointer"
-              onClick={() => scroll("right")}
+              className={"absolute bottom-[45%] w-full flex justify-between "}
             >
-              <FaChevronRight size={25} color={"#313BACFF"} className="" />
+              <div
+                className="bg-white p-3 rounded-full shadow-lg cursor-pointer"
+                onClick={() => scroll("left")}
+              >
+                <FaChevronLeft
+                  className={"font-800"}
+                  size={25}
+                  color={"#313BACFF"}
+                />
+              </div>
+
+              <div
+                className="bg-white p-3 rounded-full shadow-lg cursor-pointer"
+                onClick={() => scroll("right")}
+              >
+                <FaChevronRight size={25} color={"#313BACFF"} className="" />
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </MotionWrapper>
     </AppWrapper>

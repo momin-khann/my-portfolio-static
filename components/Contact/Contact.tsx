@@ -5,6 +5,7 @@ import emailIcon from "@/public/assets/icons/email.png";
 import mobileIcon from "@/public/assets/icons/mobile.png";
 import Image from "next/image";
 import { AppWrapper } from "@/components";
+import toast, { Toaster } from "react-hot-toast";
 
 import "./contact.css";
 
@@ -28,11 +29,26 @@ const Contact = () => {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!name || !email || !message) {
+      toast.error("Please fill the form properly.");
+      return;
+    }
+
     setLoading(true);
+
+    if (name && email && message) {
+      setIsFormSubmitted(true);
+      toast.success("Email Sent.");
+    }
+
+    setLoading(false);
   };
 
   return (
     <AppWrapper idName={"contact"} classNames={"app__whitebg"}>
+      <Toaster position="top-center" reverseOrder={false} />
       <h2 className="head-text">Take a coffee & chat with me</h2>
 
       <div className="app__footer-cards">
